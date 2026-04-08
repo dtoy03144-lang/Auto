@@ -132,7 +132,6 @@ firesignal(game:GetService("Players").LocalPlayer.PlayerGui.TradeBoothBuyItem.Fr
 end)
 -- ========================================================
 
-wait(5)
 for _,r in pairs(workspace.TradeWorld.Booths:GetChildren()) do
 	if r:FindFirstChild("Default") and  r.Default.Booth.Sign.SurfaceGui.TextLabel.Text~="Unclaimed Booth" then
 		local gr=r.Default.Booth.Sign.Attachment.ProximityPrompt
@@ -141,6 +140,7 @@ for _,r in pairs(workspace.TradeWorld.Booths:GetChildren()) do
 	end
 end
 
+wait(5)
 local jobids= {
   "fc73272c-3b08-4ad4-bdd1-288d63ff9dcf",
         "fe306349-d96b-498d-8a9c-82fdc347c61e",
