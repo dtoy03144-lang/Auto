@@ -101,9 +101,9 @@ local desiredwebhook = {
     ["Rainbow Cuckoo"] = webhook,
     ["Rainbow Brown Owl"] = webhook,
     ["Rainbow Magpie"] = webhook,
-    ["Rainbow Clam"] = webhook
+    ["Rainbow Clam"] = webhook,
 
---rare summer eggs pets
+
 ["Seal"]="https://discord.com/api/webhooks/1491480551322943539/UWM4fjLwTPBXiBblP9_9V2V7sv3nnhg9qmD73Suf4X_a_zHxBxSi9e-ONIQylDFkwWDR",
 ["Flamingo"]="https://discord.com/api/webhooks/1491480551322943539/UWM4fjLwTPBXiBblP9_9V2V7sv3nnhg9qmD73Suf4X_a_zHxBxSi9e-ONIQylDFkwWDR",
 ["Toucan"]="https://discord.com/api/webhooks/1491480551322943539/UWM4fjLwTPBXiBblP9_9V2V7sv3nnhg9qmD73Suf4X_a_zHxBxSi9e-ONIQylDFkwWDR",
