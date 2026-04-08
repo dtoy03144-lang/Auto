@@ -1,12 +1,13 @@
 if not game:IsLoaded() then game.Loaded:Wait()  end
 local g = game:GetService("Players").LocalPlayer.PlayerGui.TradeBooth
-local desiredpet = {"Lion","Kitsune","Festive Moose","Magpie","Koi"}
+local desiredpet = {"Lion","Kitsune","Festive Moose","Magpie","Koi","Headless Horseman"}
 local desiredwebhook = {
 	["Lion"]= "https://discord.com/api/webhooks/1491257519274983505/yfOg_y_CWMxZkXl_JqTEbTSXtzieSOxOqpJLfYd_R3Gxe3_TfiStVuAYW3BNVVt83yCJ",
 	["Kitsune"]="https://discord.com/api/webhooks/1491257704423886890/WGNx-N5HjAArmM3XeC4jqD0Ik-0UY4iSGkoO2lVe-uaDd14O2GpQXAELqadrab9OTe_J",
 	["Festive Moose"]="https://discord.com/api/webhooks/1491257941406253158/z2oDd7Xie74l3WqARvPWyhMMJdABwMW177n5U1u1SXSoIeDAIo6V2TI4PXEVm6BvIMmd",
 	["Magpie"]="https://discord.com/api/webhooks/1491260866006618183/r6FSIYB_cnb9KmR3puf2ikKXvqIlAOtmpqRWuECfdqFsU87EFBX4t4fX5EqyA4ZCciRO",
-	["Koi"] ="https://discord.com/api/webhooks/1491260866006618183/r6FSIYB_cnb9KmR3puf2ikKXvqIlAOtmpqRWuECfdqFsU87EFBX4t4fX5EqyA4ZCciRO"
+	["Koi"] ="https://discord.com/api/webhooks/1491260866006618183/r6FSIYB_cnb9KmR3puf2ikKXvqIlAOtmpqRWuECfdqFsU87EFBX4t4fX5EqyA4ZCciRO",
+	["Headless Horseman"]="https://discord.com/api/webhooks/1491286020489220096/BTOuvUxJHcr2xwdjctMsKMTD-AHygHzJTzHJ1-Jq7lTYNjba5TVWdTPyi07cbFRGdtms",
 }
 local frame= g.Frame
 local foundintheserver={
