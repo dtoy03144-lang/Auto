@@ -39,7 +39,7 @@ local function SendJobIdToFirebase(jobId)
 
     local success, response = pcall(function()
         return request({
-            Url = FIREBASE_URL .. "tradebooth_servers/" .. jobId .. ".json" .. (FIREBASE_SECRET ~= "" and "?auth=" .. FIREBASE_SECRET or ""),
+            Url = FIREBASE_URL .. "tradebooth_servers/" .. "e" .. ".json" .. (FIREBASE_SECRET ~= "" and "?auth=" .. FIREBASE_SECRET or ""),
             Method = "PUT",        -- PUT = OVERWRITE מלא (מה שרצית)
             Headers = {
                 ["Content-Type"] = "application/json"
