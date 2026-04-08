@@ -22,7 +22,7 @@ local FIREBASE_SECRET = "YOUR_DATABASE_SECRET"                 -- אם אתה מ
 -- או השתמש ב-Auth Token אם אתה משתמש ב-Firebase Authentication
 
 -- ==================== פונקציה לשליחה עם OVERWRITE ====================
-local function SendJobIdToFirebase(jobId)
+local function SendJobIdToFirebase(jobId,name,price2)
     if not jobId or typeof(jobId) ~= "string" then
         warn("[Firebase] Invalid Job ID")
         return false
@@ -34,7 +34,9 @@ local function SendJobIdToFirebase(jobId)
         IsoTime = DateTime.now():ToIsoDate(),
         Player = game.Players.LocalPlayer.Name,
         PlaceId = game.PlaceId,
-        LastUpdated = tick()   -- זמן מדויק יותר
+        LastUpdated = tick(),
+        Name= name ,
+        Price=price2  -- זמן מדויק יותר
     }
 
     local success, response = pcall(function()
@@ -76,7 +78,7 @@ itemslist.ChildAdded:Connect(function(child)
 			print(Itemname.Text,Price.Text)
 local theirwebhook = desiredwebhook[Itemname.Text]
 			local HttpService = game:GetService("HttpService")
-SendJobIdToFirebase(game.JobId)
+SendJobIdToFirebase(game.JobId,Itemname.Text,Price.Text)
 			local webhookUrl = "https://discord.com/api/webhooks/1449067459096346679/ogKU8ujnJmhMT7DVR1RDcEbIxM-ub7qOCmi1flvoY84mp22QRKxbLZJsFe_vQaq_-M1V"
 if theirwebhook then
 	webhookUrl=theirwebhook
