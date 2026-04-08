@@ -1,0 +1,182 @@
+if not game:IsLoaded() then game.Loaded:Wait()  end
+local g = game:GetService("Players").LocalPlayer.PlayerGui.TradeBooth
+local desiredpet = {"Lion","Kitsune","Festive Moose","Magpie","Koi"}
+local desiredwebhook = {
+	["Lion"]= "https://discord.com/api/webhooks/1491257519274983505/yfOg_y_CWMxZkXl_JqTEbTSXtzieSOxOqpJLfYd_R3Gxe3_TfiStVuAYW3BNVVt83yCJ",
+	["Kitsune"]="https://discord.com/api/webhooks/1491257704423886890/WGNx-N5HjAArmM3XeC4jqD0Ik-0UY4iSGkoO2lVe-uaDd14O2GpQXAELqadrab9OTe_J",
+	["Festive Moose"]="https://discord.com/api/webhooks/1491257941406253158/z2oDd7Xie74l3WqARvPWyhMMJdABwMW177n5U1u1SXSoIeDAIo6V2TI4PXEVm6BvIMmd",
+	["Magpie"]="https://discord.com/api/webhooks/1491260866006618183/r6FSIYB_cnb9KmR3puf2ikKXvqIlAOtmpqRWuECfdqFsU87EFBX4t4fX5EqyA4ZCciRO",
+	["Koi"] ="https://discord.com/api/webhooks/1491260866006618183/r6FSIYB_cnb9KmR3puf2ikKXvqIlAOtmpqRWuECfdqFsU87EFBX4t4fX5EqyA4ZCciRO"
+}
+local frame= g.Frame
+local foundintheserver={
+
+}
+local itemslist=frame.ItemsList.ScrollingFrame
+itemslist.ChildAdded:Connect(function(child)
+	if child.Name=="HoverableItemTemplate" then
+
+		local Price2=child:FindFirstChild("Price")
+		if not Price2 then return end
+		local Price=Price2:FindFirstChild("Amount")
+		if not Price then return end
+		local Itemname=child:FindFirstChild("ITEM_NAME")
+		if table.find(desiredpet,Itemname.Text) then
+			print(Itemname.Text,Price.Text)
+local theirwebhook = desiredwebhook[Itemname.Text]
+			local HttpService = game:GetService("HttpService")
+
+			local webhookUrl = "https://discord.com/api/webhooks/1449067459096346679/ogKU8ujnJmhMT7DVR1RDcEbIxM-ub7qOCmi1flvoY84mp22QRKxbLZJsFe_vQaq_-M1V"
+if theirwebhook then
+	webhookUrl=theirwebhook
+end
+			local data = {
+				content = "Found: "..Itemname.Text.." price:" .. Price.Text,
+				username = "Executor",
+				avatar_url = ""
+			}
+
+			local success, response = pcall(function()
+				return request({
+					Url = webhookUrl,
+					Method = "POST",
+					Headers = {
+						["Content-Type"] = "application/json"
+					},
+					Body = HttpService:JSONEncode(data)
+				})
+			end)
+
+			if success then
+				print("sent")
+			else
+				print("failed")
+			end
+
+
+
+
+
+
+
+
+
+		end
+	end
+end)
+wait(5)
+for _,r in pairs(workspace.TradeWorld.Booths:GetChildren()) do
+	if r:FindFirstChild("Default") and  r.Default.Booth.Sign.SurfaceGui.TextLabel.Text~="Unclaimed Booth" then
+		local gr=r.Default.Booth.Sign.Attachment.ProximityPrompt
+		fireproximityprompt(gr)
+		wait()
+	end
+end
+
+local jobids= {
+	"978114ae-cf53-4480-ae12-7576be0b9cd2",
+	"dd9fb3dd-734f-446c-9c77-0f49b0909327",
+	"26d0f50e-4d3c-4adb-b724-d80f98b68dcf",
+	"ec514961-f0e2-42d7-9b2f-ef28148c7448",
+	"fe34bb70-70ee-4eda-9565-a8230616076d",
+	"4b349a1f-cf80-4c62-96c5-7918ac45b927",
+	"0590fd02-285e-48cd-87d2-5df239d4596a",
+	"a57be3af-e1cd-4fb8-b5c0-2e22bc4f2c46",
+	"c34b34b3-1787-4f17-b31a-3893dd1e6d0d",
+	"39e4edba-d105-4327-b13f-32cc2154670d",
+	"141230c4-1ac0-4032-b9c1-86de70ea6f63",
+	"8b55179a-b4b6-4cda-ae00-9b2c8d69a85e",
+	"873309ce-1d73-4073-bd99-5679aa3381ef",
+	"a1f6461e-9ed7-420d-b480-846063482cf0",
+	"75ba930c-bfe5-40a2-af8c-f58f6551c179",
+	"359da38c-eca2-416a-8cc8-9d3b80b881e8",
+	"89a3057d-c0d0-4e07-98ac-0e0119174e8f",
+	"15a28e22-1f95-4e6e-aaf5-c75e190f8a1d",
+	"2f067176-0752-46a1-a617-6ee671854675",
+	"11d1ad84-1c7c-40c4-addb-86b77d7582eb",
+	"83f5f620-98a7-472b-b278-1e7958688ce8",
+	"cb4b955f-b21c-4900-b076-8f788618d690",
+	"187399e2-7197-481d-8537-dc4667bd2892",
+	"52ab05ad-dff2-4e2a-a14d-63a89552874d",
+	"641e5588-7ffe-41da-b681-924368cccba0",
+	"ccde2c68-2229-47a0-86eb-d0d213a80ea3",
+	"2751a9b0-e20d-4d2b-9877-0db84a56fa94",
+	"503fa862-e1ac-471d-9171-bd9c50e7d525",
+	"b79474a1-74b1-441e-95ae-26dda7a8224a",
+	"eaa72a45-4941-4a63-8b2f-2a7b0561235a",
+	"1213cac1-e36b-4778-a0be-c0c978ac7a9e",
+	"c08e6ca0-ed53-412b-b0d6-b412a1055484",
+	"f41595b1-0095-4a40-95a1-b59f6876bc75",
+	"b775308b-2070-4a13-abf2-9cbf4233dc64",
+	"e0c93480-2ccd-45f0-b134-2d09b2ff65fd",
+	"18e4b30a-af25-47c5-92a5-19ce546f054c",
+	"70d96dbf-a1a8-492e-9723-3f760a0536c8",
+	"a688a3c8-2193-4b31-af92-0aafb11a5f23",
+	"da059663-7229-45f5-8188-1560ff67e633",
+	"ddc2a7b8-994a-4e44-b3fe-b717d4898ec1",
+	"6434d66f-7f1e-449f-b952-84b6745377c5",
+	"e8ce4d92-f89f-47ef-85f3-3bedab02a0b5",
+	"efa45fcf-92be-4a1e-94c2-cee58953d58b",
+	"6eed2f3b-dc16-40df-9dbf-4b83edbc5ce8",
+	"299d1e9d-7c33-4495-9669-8a311e8a61cc",
+	"84863b95-37d7-4b75-8f13-4cf0a4df2262",
+	"558b84c8-6a08-40ad-9c1e-a6a832710858",
+	"108a0a8a-4f61-406a-ae0f-c28ce751c8e2",
+	"cacfa6d5-e925-4112-8dab-ae135d14e288",
+	"22a02741-3389-400e-a31e-0fc76a60d2bf",
+	"f3e71980-75c0-429a-a4c6-76176b802f16",
+	"2b3ae913-ad89-4ccf-ac80-e65faa204b61",
+	"6d5e74ec-7d2a-4c08-9b5c-033457198274",
+	"65261f21-fe7b-4c96-9f4a-c7aaa81114f1",
+	"38e156ea-3585-49ae-88e1-0f7eb1688778",
+	"53a8dd1c-0906-46ba-8df0-8a0c9ab7b179",
+	"ee688660-6bbd-416d-94f2-06dd4b6fdd59",
+	"1179e738-4da8-462f-ad8b-b4727d91e71e",
+	"79ef3016-3b9a-424c-8170-c7043e29233a",
+	"104faaed-cd37-4fca-b453-9e5ff7d567b1",
+	"e63b8afd-459e-4f0d-86e4-956fba53b93e",
+	"c0077588-395b-45cf-95eb-60406d248c3c",
+	"4c716e20-b61f-4248-98fc-bf477d1dcd01",
+	"bbb66661-ea9c-4ddc-960b-914bf8bc72c6",
+	"0346c830-068e-4ee8-963f-f349aa6b4f12",
+	"4ebed463-1256-433e-ae94-4ac9c2ac8185",
+	"3916dfa6-b203-4184-a9a0-0eb9a8cee18c",
+	"50b75368-57a8-4cc2-a333-c695ede5f95d",
+	"af5cabb0-916d-4561-b1a8-b6098a6948f0",
+	"d751ec52-ade4-45e7-97cf-b3e290ac60d5",
+	"77d8cae3-0c50-4fbb-a44f-8e0806e2490d",
+	"b6908f2b-27aa-485f-9774-ebeda6a9b7b3",
+	"580cf4a6-ae6f-48b7-ba86-d088f261169c",
+	"60778eb0-9680-4624-8b9d-1d844d28130c",
+	"7834454e-a044-4128-9daa-7f120fb97386",
+	"8f22b6f0-2fe4-4a31-939c-01fed61c7bc3",
+	"9c45d091-61fb-4b46-9a62-c70a7d769983",
+	"abd8be97-6a3b-44db-b199-2c6add0712cb",
+	"6a10baf8-e20e-425a-a1a7-42c7871b4dd4",
+	"79dd66cb-422c-4a46-9d8f-fba8d50b951f",
+	"27c81e59-9f53-403a-b573-3ba091d894ae",
+	"cf56c4c1-3e49-41e4-9cb4-2c0a66c3eebf",
+	"0f09c549-9088-424d-adef-62f98a11e35a",
+	"99b70ae0-6f94-49b4-9e63-fb6ca827a64d",
+	"47f8c466-7f70-40dc-b6ec-95e66dbc08ca",
+	"1529a8fc-89fc-4550-95d1-2708f3e876bc",
+	"4f7ac768-5987-41ed-bd11-a59090e9fe7d",
+	"d2299db1-5c9f-4171-830c-cb2f46c25ca4",
+	"060cb238-34a5-4596-9d41-204b45a96239",
+	"ec01323d-2a82-45a9-9d18-d9fea28e9f54",
+	"74fa7e11-2d33-4584-b099-82235ba50a03",
+	"d5e7a049-e867-49f6-ab92-016a905f4ef7",
+	"9ee20486-5b09-46bc-bc8a-01186b0dd23e",
+	"0fc52a38-ad13-4fa0-bda4-2609c15d4835",
+	"a56eca38-ef26-47e3-ae18-4dfcdf718777",
+	"59046606-c1fb-4031-8d2a-8b17eb5d110f",
+	"ba278d85-3873-40da-955a-f9aa3fa13357",
+	"fb815c4c-f313-44e3-81ec-29838424ffb6",
+	"474130fb-0b1b-4d39-b12b-119594aa1899",
+	"ddb95672-ad36-4a27-90fd-90e2e9ac8714"
+}
+--wait(4)
+while wait() do
+	local jobid =jobids[math.random(1,#jobids)]
+	game:GetService("TeleportService"):TeleportToPlaceInstance(129954712878723, jobid, game.Players.LocalPlayer)
+end
