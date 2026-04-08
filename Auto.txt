@@ -1,6 +1,6 @@
 if not game:IsLoaded() then game.Loaded:Wait()  end
 local g = game:GetService("Players").LocalPlayer.PlayerGui.TradeBooth
-local desiredpet = {"Lion","Kitsune","Festive Moose","Magpie","Koi","Headless Horseman","Seal","Flamingo","Toucan","Sea Turtle","Orangutan","Meerkat","Sand Sanke","Axolotl","Hyacinth Macaw"}
+local desiredpet = {"Lion","Kitsune","Festive Moose","Magpie","Koi","Headless Horseman","Seal","Flamingo","Toucan","Sea Turtle","Orangutan","Meerkat","Sand Sanke","Axolotl","Hyacinth Macaw","Butterfly","Spinosaurus","Dilophosaurus","Gold Finch","Rainbow Oxpecker"}
 local desiredwebhook = {
 	["Lion"]= "https://discord.com/api/webhooks/1491257519274983505/yfOg_y_CWMxZkXl_JqTEbTSXtzieSOxOqpJLfYd_R3Gxe3_TfiStVuAYW3BNVVt83yCJ",
 	["Kitsune"]="https://discord.com/api/webhooks/1491257704423886890/WGNx-N5HjAArmM3XeC4jqD0Ik-0UY4iSGkoO2lVe-uaDd14O2GpQXAELqadrab9OTe_J",
