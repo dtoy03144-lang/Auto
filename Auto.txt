@@ -140,7 +140,7 @@ for _,r in pairs(workspace.TradeWorld.Booths:GetChildren()) do
 	end
 end
 
-wait(5)
+wait(5*2)
 task.spawn(function()
 local jobids= {
   "fc73272c-3b08-4ad4-bdd1-288d63ff9dcf",
