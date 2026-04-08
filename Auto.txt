@@ -45,6 +45,10 @@ local desiredpet = {"Lion","Kitsune","Festive Moose","Magpie","Koi","Headless Ho
     "Rainbow Magpie",
     "Rainbow Clam"
 }
+local desiredpet2={
+"Lion",
+"Butterfly"
+}
 local webhook = "https://discord.com/api/webhooks/1491257760241946634/3NbFnl8gtYw0uU9b-JlIbMWTM-WinuF5_mITsRc-pT0Q25h0IKMYRLZJSPv9cScxNBLO"
 local desiredwebhook = {
 	["Lion"]= "https://discord.com/api/webhooks/1491257519274983505/yfOg_y_CWMxZkXl_JqTEbTSXtzieSOxOqpJLfYd_R3Gxe3_TfiStVuAYW3BNVVt83yCJ",
@@ -233,111 +237,34 @@ for _,r in pairs(workspace.TradeWorld.Booths:GetChildren()) do
 		wait()
 	end
 end
-
-local jobids= {
-    "dba246b5-76d0-4c6d-b4e3-4db6b25137c4",
-        "402fa9df-b016-4349-9599-a426f16083f0",
-        "8a521b6d-b5c3-483b-a05b-d2556484aa86",
-        "caf1b443-79e7-4cf8-a6af-7e5ef4f7ff84",
-        "96477147-2fc3-45b1-bc2d-3d0a76f62f95",
-        "34a774b1-1df5-44a6-b865-1077f84d36cd",
-        "03d4b7de-ace7-475e-974c-66aa4c31fb18",
-        "8566f763-6a54-4cd1-ae2b-28264803e420",
-        "d344afe3-0a1c-435c-ba38-b8233da2a559",
-        "f5c6f5f4-ce0e-4eb9-8374-5bebe5adb4b3",
-        "17a058d4-8d3f-49e7-9cc7-6b8f1999e7b8",
-        "eb3a2631-9d63-4a80-a8b4-16503b6e063d",
-        "39197a81-8ed2-4a10-8f1a-289a30f1710e",
-        "932cfe04-ea56-4602-92ff-865812795395",
-        "c7a3ea3b-0070-400d-9ff9-44779e0923c4",
-        "30cda287-efaa-477f-bf13-fbbcdd9a8f99",
-        "999847aa-a87e-4fe3-936f-e91571a97f0f",
-        "01a048ef-4db7-4534-aec8-e0278d6b4d51",
-        "1f837324-549f-4ba4-8c7c-ea2da6d59c8c",
-        "7d46a73b-2ad6-4cdf-9c22-404ede023e25",
-        "59a9c1be-0056-4078-b5c8-5d87ede4010f",
-        "b1e37cb3-56d2-454d-80f4-decb4202f9a7",
-        "caf580aa-b74e-42df-95f8-4d0861cc5e69",
-        "b05ce564-081a-402a-99be-2d7182902d82",
-        "52552288-bd1f-44af-b2d7-c0c85fcd531d",
-        "dc2fb4be-8e77-4b64-bbd5-6305a8df4080",
-        "a8d9da12-43f3-4adb-bc94-8d11c5bb244e",
-        "a7b6cbc9-d1fe-4436-b32e-68e037e2e2ec",
-        "181f0edd-33ed-4db7-90b3-6181a6c563f5",
-        "63bab683-00c2-4ab3-a5e7-651a86a3ef15",
-        "61396b8e-b13e-4eb7-b076-887c8907bfbf",
-        "5016dbc2-f392-4148-997a-c4ff5df0b6c1",
-        "597f59c5-cce5-4c5a-a11c-0557cbe8c0f1",
-        "d28dc6e0-f980-4771-810b-425bc40f76ea",
-        "27d2dd4c-7bb1-4e87-84a4-dfe2e33a89d8",
-        "d088ac64-8ad3-472f-a38e-a04b3808e135",
-        "8aebebc0-ac28-4517-badf-41d0522af58e",
-        "9ee861c2-75f7-40fd-8ec7-8380cb140f32",
-        "823c2d49-d859-49a8-8a88-139ed20c810e",
-        "90adcf89-ce9a-448b-8be2-9a013d03213e",
-        "e76614bb-3248-46e3-974d-408dbaf6b714",
-        "132f1b50-16f3-401f-9ea2-344e7dc18660",
-        "a56387b3-0337-4102-900f-b2721eef209c",
-        "e1347030-901a-4e80-918e-cf8e2c00a122",
-        "6057de39-dd19-4d7b-a0db-670356016873",
-        "d32de641-ed84-487d-8fab-c77e364446b9",
-        "099d99fd-78c7-4270-be1c-725521153899",
-        "193be1cb-b887-42b0-ba74-8bc6aee32bf0",
-        "6d129807-19f9-4ed8-96dc-e6f4d1c97295",
-        "7dd99771-7981-41af-baf0-a539e93a7320",
-        "64cf2013-376e-4ca9-a6dc-0b557b8675a0",
-        "5043c840-8456-4a20-97ec-083aa81c8fab",
-        "5a68ed66-4c47-4223-9ad5-f65405bc44a2",
-        "9c3b33c4-2c0a-440d-9dc5-d40a155ad7e2",
-        "5188d5c3-d091-46e9-a7fd-4da0d6de8f32",
-        "a812141b-582e-4fc4-bc28-821d91cfa62c",
-        "d2079f89-e7c3-44d9-adb5-6e0fa97afbe6",
-        "1aca7fbb-5bbe-4b63-8963-eab33ea27af1",
-        "1a41d8c1-ae15-4b9e-94d7-1dcd38731e90",
-        "cc038667-f7f3-4555-9716-6132e6ff785e",
-        "19777415-128d-4c24-82f3-68d8607ffb7c",
-        "e65e06b1-ac56-4ce1-89ab-00c5027f8783",
-        "4b84be24-dcbf-4742-a003-cec2ec64bcc1",
-        "1dcde5a9-7c5d-4e74-bf22-98d3af5190a5",
-        "00538d4f-393f-4e25-ad83-be7656e407f8",
-        "a666e7df-6fe5-41f3-82a3-7db0f16c2b8f",
-        "2f11a6db-0ffd-402c-becd-95c75e333975",
-        "38810273-45e2-46a8-8e13-6752679859bd",
-        "ed4c3d11-be35-43a0-8573-92b8aa7f4113",
-        "b7f618c6-6536-4138-9e54-a25d7e4851dd",
-        "0e87f2f4-9668-4880-a693-337689df348d",
-        "f31b4ace-2cfe-4c92-9281-498cead5264d",
-        "a6092276-1532-43c4-a807-1d8b0a28251e",
-        "bcd3af6c-c74f-4bb3-adb0-eb78aeb789e0",
-        "22e2711d-4267-4723-bc98-d1b349fb72a6",
-        "a847254e-14b5-43e5-8f79-8be8dc4b7eab",
-        "2aa8466a-dd44-4ebf-b22c-e35268878a29",
-        "372805df-079c-4752-b385-00e2f7d65440",
-        "2c8a1bb4-73e9-4ae2-bafe-25f502582062",
-        "7fcb34b9-a670-4cd6-9bf2-0879e1ecfd81",
-        "68a7f14b-8261-4fca-a313-882dc7beddcf",
-        "09e4550b-af72-4152-9f17-fe04385b88e6",
-        "264e1937-7d83-4bed-9f50-54459cd988b0",
-        "00df3d50-22dc-4680-8cf2-43d18b0e9898",
-        "700ee004-38ef-4d0c-bc8c-fb5d301f5fba",
-        "b887db31-a4b9-4e81-afb2-3000f6d66989",
-        "16f59c44-beb6-4981-b7db-c79602f22309",
-        "f461b606-284c-4f14-bd2b-91e3e8405059",
-        "8844005c-6216-457a-91e1-75b90ba6a1dd",
-        "1ee1dc4d-aecf-462c-81eb-8f0525adf0d5",
-        "35e78af0-99a2-4beb-a52a-83b4a910199d",
-        "c0b3b16f-4217-464f-bfc1-1272b57349aa",
-        "4d9f8db0-45ba-4adf-86a1-db529c618a18",
-        "419d2a93-8b8f-4ac8-86f7-43278027167e",
-        "76525bfe-f291-487b-a851-86f8afa98d48",
-        "5b96538f-f499-4413-b429-697ff77796ed",
-        "88e04531-b120-4f99-97ee-340f616bdf8d",
-        "da335492-2fac-47a3-9bd0-2b97588ab329",
-        "28d56a0e-64d8-4100-ac1e-1114e9739220",
-        "c43bfc39-0289-42ba-9dc7-fda8e1850c88"
-}
---wait(4)
 while wait() do
-	local jobid =jobids[math.random(1,#jobids)]
-	game:GetService("TeleportService"):TeleportToPlaceInstance(129954712878723, jobid, game.Players.LocalPlayer)
+
+
+local args = {
+	"Pet",
+	{
+		PetData = {
+			MutationType = "Normal",
+			LevelProgress = 0,
+			Hunger = 0,
+			Level = 0,
+			BaseWeight  =1,-- put here the base weight
+			Boosts = {},
+		},
+		PetType = "Lion",-- put here ur desired pet
+		PetAbility = {}
+	}
+}
+local k ,f,g =pcall(function()
+return game:GetService("ReplicatedStorage"):WaitForChild("GameEvents"):WaitForChild("TradeEvents"):WaitForChild("TokenRAPs"):WaitForChild("FindSellers"):InvokeServer(unpack(args))
+end)
+if f and g then
+game:GetService("ReplicatedStorage").GameEvents.TradeEvents.TokenRAPs.TeleportToListing:InvokeServer(g)
 end
+
+
+
+
+end
+
+
