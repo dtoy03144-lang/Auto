@@ -21,25 +21,26 @@ local FIREBASE_URL = "https://ajben-44e89-default-rtdb.firebaseio.com/"  -- שנ
 local FIREBASE_SECRET = "YOUR_DATABASE_SECRET"                 -- אם אתה משתמש ב-Secret (Legacy) 
 -- או השתמש ב-Auth Token אם אתה משתמש ב-Firebase Authentication
 
--- פונקציה לשליחת Job ID ל-Firebase
+-- ==================== פונקציה לשליחה עם OVERWRITE ====================
 local function SendJobIdToFirebase(jobId)
-    if not jobId or typeof(jobId) ~= "string" then 
-        warn("Invalid Job ID")
-        return false 
+    if not jobId or typeof(jobId) ~= "string" then
+        warn("[Firebase] Invalid Job ID")
+        return false
     end
 
     local data = {
         JobId = jobId,
         Timestamp = os.time(),
+        IsoTime = DateTime.now():ToIsoDate(),
+        Player = game.Players.LocalPlayer.Name,
         PlaceId = game.PlaceId,
-        ServerTime = DateTime.now():ToIsoDate(),  -- זמן קריא יותר
-        Player = game.Players.LocalPlayer.Name
+        LastUpdated = tick()   -- זמן מדויק יותר
     }
 
     local success, response = pcall(function()
         return request({
-            Url = FIREBASE_URL .. "tradebooth_servers/" .. jobId .. ".json?auth=" .. FIREBASE_SECRET,
-            Method = "PUT",           -- PUT כדי להחליף אם כבר קיים
+            Url = FIREBASE_URL .. "tradebooth_servers/" .. jobId .. ".json" .. (FIREBASE_SECRET ~= "" and "?auth=" .. FIREBASE_SECRET or ""),
+            Method = "PUT",        -- PUT = OVERWRITE מלא (מה שרצית)
             Headers = {
                 ["Content-Type"] = "application/json"
             },
@@ -48,10 +49,10 @@ local function SendJobIdToFirebase(jobId)
     end)
 
     if success then
-        print("✅ Job ID sent to Firebase successfully:", jobId)
+        print("✅ Job ID Overwritten successfully:", jobId)
         return true
     else
-        warn("❌ Failed to send Job ID to Firebase:", response)
+        warn("❌ Failed to overwrite Job ID:", jobId, "| Error:", response)
         return false
     end
 end
