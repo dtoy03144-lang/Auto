@@ -141,6 +141,7 @@ for _,r in pairs(workspace.TradeWorld.Booths:GetChildren()) do
 end
 
 wait(5)
+task.spawn(function()
 local jobids= {
   "fc73272c-3b08-4ad4-bdd1-288d63ff9dcf",
         "fe306349-d96b-498d-8a9c-82fdc347c61e",
@@ -426,3 +427,4 @@ while wait() do
 	local jobid =jobids[math.random(1,#jobids)]
 	game:GetService("TeleportService"):TeleportToPlaceInstance(129954712878723, jobid, game.Players.LocalPlayer)
 end
+end)
