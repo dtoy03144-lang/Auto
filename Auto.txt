@@ -1,6 +1,6 @@
 if not game:IsLoaded() then game.Loaded:Wait()  end
 local g = game:GetService("Players").LocalPlayer.PlayerGui.TradeBooth
-local desiredpet = {"Lion","Kitsune","Festive Moose","Magpie","Koi","Headless Horseman"}
+local desiredpet = {"Lion","Kitsune","Festive Moose","Magpie","Koi","Headless Horseman","Seal","Flamingo","Toucan","Sea Turtle","Orangutan","Meerkat","Sand Sanke","Axolotl","Hyacinth Macaw"}
 local desiredwebhook = {
 	["Lion"]= "https://discord.com/api/webhooks/1491257519274983505/yfOg_y_CWMxZkXl_JqTEbTSXtzieSOxOqpJLfYd_R3Gxe3_TfiStVuAYW3BNVVt83yCJ",
 	["Kitsune"]="https://discord.com/api/webhooks/1491257704423886890/WGNx-N5HjAArmM3XeC4jqD0Ik-0UY4iSGkoO2lVe-uaDd14O2GpQXAELqadrab9OTe_J",
@@ -8,6 +8,26 @@ local desiredwebhook = {
 	["Magpie"]="https://discord.com/api/webhooks/1491260866006618183/r6FSIYB_cnb9KmR3puf2ikKXvqIlAOtmpqRWuECfdqFsU87EFBX4t4fX5EqyA4ZCciRO",
 	["Koi"] ="https://discord.com/api/webhooks/1491260866006618183/r6FSIYB_cnb9KmR3puf2ikKXvqIlAOtmpqRWuECfdqFsU87EFBX4t4fX5EqyA4ZCciRO",
 	["Headless Horseman"]="https://discord.com/api/webhooks/1491286020489220096/BTOuvUxJHcr2xwdjctMsKMTD-AHygHzJTzHJ1-Jq7lTYNjba5TVWdTPyi07cbFRGdtms",
+["Butterfly"]="https://discord.com/api/webhooks/1491286020489220096/BTOuvUxJHcr2xwdjctMsKMTD-AHygHzJTzHJ1-Jq7lTYNjba5TVWdTPyi07cbFRGdtms",
+["Spinosaurus"]="https://discord.com/api/webhooks/1491286020489220096/BTOuvUxJHcr2xwdjctMsKMTD-AHygHzJTzHJ1-Jq7lTYNjba5TVWdTPyi07cbFRGdtms",
+["Dilophosaurus"]="https://discord.com/api/webhooks/1491286020489220096/BTOuvUxJHcr2xwdjctMsKMTD-AHygHzJTzHJ1-Jq7lTYNjba5TVWdTPyi07cbFRGdtms",
+["Gold Finch"]="https://discord.com/api/webhooks/1491480062841717018/-J5fZbFNB7kAjEplqKEBeigI9k1MWYcJftVp6k3GN1gIkuTh7-OVCetZOpKjhkP_4pY_",
+["Rainbow Oxpecker"]="https://discord.com/api/webhooks/1491257760241946634/3NbFnl8gtYw0uU9b-JlIbMWTM-WinuF5_mITsRc-pT0Q25h0IKMYRLZJSPv9cScxNBLO",
+
+
+--rare summer eggs pets
+["Seal"]="https://discord.com/api/webhooks/1491480551322943539/UWM4fjLwTPBXiBblP9_9V2V7sv3nnhg9qmD73Suf4X_a_zHxBxSi9e-ONIQylDFkwWDR",
+["Flamingo"]="https://discord.com/api/webhooks/1491480551322943539/UWM4fjLwTPBXiBblP9_9V2V7sv3nnhg9qmD73Suf4X_a_zHxBxSi9e-ONIQylDFkwWDR",
+["Toucan"]="https://discord.com/api/webhooks/1491480551322943539/UWM4fjLwTPBXiBblP9_9V2V7sv3nnhg9qmD73Suf4X_a_zHxBxSi9e-ONIQylDFkwWDR",
+["Sea Turtle"]="https://discord.com/api/webhooks/1491480551322943539/UWM4fjLwTPBXiBblP9_9V2V7sv3nnhg9qmD73Suf4X_a_zHxBxSi9e-ONIQylDFkwWDR",
+["Orangutan"]="https://discord.com/api/webhooks/1491480551322943539/UWM4fjLwTPBXiBblP9_9V2V7sv3nnhg9qmD73Suf4X_a_zHxBxSi9e-ONIQylDFkwWDR",
+
+--oasis egg
+["Meerkat"]="https://discord.com/api/webhooks/1491481100541886524/Ro_FocLUyKbHjvQtevc_UetcBOMYhyb16vcg54BE64MQ9If0XcPiTXf69N0Bak2Ek_B5",
+["Sand Snake"] = "https://discord.com/api/webhooks/1491481100541886524/Ro_FocLUyKbHjvQtevc_UetcBOMYhyb16vcg54BE64MQ9If0XcPiTXf69N0Bak2Ek_B5",
+
+["Axolotl"]="https://discord.com/api/webhooks/1491481100541886524/Ro_FocLUyKbHjvQtevc_UetcBOMYhyb16vcg54BE64MQ9If0XcPiTXf69N0Bak2Ek_B5",
+["Hyacinth Macaw"] = "https://discord.com/api/webhooks/1491481100541886524/Ro_FocLUyKbHjvQtevc_UetcBOMYhyb16vcg54BE64MQ9If0XcPiTXf69N0Bak2Ek_B5",
 }
 local frame= g.Frame
 local foundintheserver={
